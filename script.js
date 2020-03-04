@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const apiRoot = 'https://safe-escarpment-75751.herokuapp.com/v1/task/';
+  const apiRoot = 'https://safe-escarpment-75751.herokuapp.com/v1/task';
    const trelloApiRoot = 'http://localhost:8080/v1/trello/';
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
@@ -63,7 +63,7 @@ $(document).ready(function() {
   }
 
   function getAllTasks() {
-    const requestUrl = apiRoot + 'getTasks';
+    const requestUrl = apiRoot + '/getTasks';
 
     $.ajax({
       url: requestUrl,
@@ -127,7 +127,7 @@ $(document).ready(function() {
     var taskTitle = $(this).find('[name="title"]').val();
     var taskContent = $(this).find('[name="content"]').val();
 
-    var requestUrl = apiRoot + 'createTask';
+    var requestUrl = apiRoot + '/createTask';
 
     $.ajax({
       url: requestUrl,
